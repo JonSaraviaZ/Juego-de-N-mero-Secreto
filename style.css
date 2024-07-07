@@ -109,3 +109,74 @@ button {
     font-size: 32px;
     font-weight: 400;
 }
+
+/* Media queries */
+
+/* Desde 1200 px hasta 993px */
+@media (min-width: 993px) and (max-width: 1200px) {
+    h1{
+        height: 300px;
+        width: 420px;
+    }
+    .container__imagen-persona{
+        width: 50%;
+    }
+    .container__input{
+        width:420px;
+    }
+}
+
+/* Desde 992 px hasta 769 px*/
+@media (min-width: 769px) and (max-width: 992px) {
+    h1{
+        height: 300px;
+        width: 420px;
+    }
+    .container__imagen-persona{
+        width: 35%;
+    }
+    .container__input{
+        width:420px;
+    }
+}
+
+/* Desde 577px hasta 768px*/
+@media (min-width: 577px) and (max-width: 768px) {
+    h1{
+        height: 300px;
+        width: 420px;
+        font-size: 60px;
+        padding-bottom: 0px;
+    }
+    .container__imagen-persona{
+        display:none;
+    }
+    .container__input{
+        width:500px;
+    }
+
+}
+
+/* Menos de 576px*/
+@media (min-width: 1px) and (max-width: 576px){
+    .container{
+        display:block;
+        
+    }
+    h1{
+        height: 200px;
+        width: 220px;
+        font-size: 40px;
+        margin-bottom: 20px;
+    }
+    .texto__parrafo{
+        font-size: 30px;
+    }
+    .container__imagen-persona{
+        display:none;
+    }
+    .container__input{
+        width:300px;
+    }
+
+} 
