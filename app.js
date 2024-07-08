@@ -22,9 +22,9 @@ function verificarIntento(){
     } else{
         //el usuario no acertó
         if (numeroDeUsuario>numeroSecreto){
-            asignarTextoElemento('p','El número secreto es menor');
+            asignarTextoElemento('p',`El número secreto es menor a ${numeroDeUsuario}`);
         } else{
-            asignarTextoElemento('p','El número secreto es mayor');
+            asignarTextoElemento('p',`El número secreto es mayor a ${numeroDeUsuario}`);
         }
         intentos++;
         limpiarCaja();
