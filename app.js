@@ -15,7 +15,7 @@ function verificarIntento(){
     let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);;
     //Con esto puedo utilizar una sola función, previamente definida, para encontrar el número secreto.
     if (numeroDeUsuario === numeroSecreto){
-        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos===1) ?'vez':'veces'}`);
+        asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos===1) ?'intento':'intentos'}`);
         //con este código document.getElementById('reiniciar').removeAttribute('disabled') se puede remover
         //el atributo que tenga un elemento de HTML en Javascript
         document.getElementById('reiniciar').removeAttribute('disabled');
