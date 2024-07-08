@@ -12,24 +12,27 @@ function asignarTextoElemento(elemento,texto){
 }
 
 function verificarIntento(){
-    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);;
-    //Con esto puedo utilizar una sola función, previamente definida, para encontrar el número secreto.
-    if (numeroDeUsuario === numeroSecreto){
+    //al encerrar en el parámetro en parseInt se transforma el string en un número entero.
+    let numeroDeUsuario = parseInt(document.getElementById('valorUsuario').value);
+    if (isNaN(numeroDeUsuario)){
+        asignarTextoElemento('p','Ingresa un número entero.')
+    } else if (numeroDeUsuario === numeroSecreto){
         asignarTextoElemento('p',`Acertaste el número en ${intentos} ${(intentos===1) ?'intento':'intentos'}`);
         //con este código document.getElementById('reiniciar').removeAttribute('disabled') se puede remover
         //el atributo que tenga un elemento de HTML en Javascript
         document.getElementById('reiniciar').removeAttribute('disabled');
     } else{
+        //console.log(intentos)
         //el usuario no acertó
         if (numeroDeUsuario>numeroSecreto){
-            asignarTextoElemento('p','El número secreto es menor');
-        } else{
-            asignarTextoElemento('p','El número secreto es mayor');
-        }
+            asignarTextoElemento('p',`El número secreto es menor a ${numeroDeUsuario}`);
+        } else if (numeroDeUsuario<numeroSecreto){
+            asignarTextoElemento('p',`El número secreto es mayor a ${numeroDeUsuario}`);
         intentos++;
         limpiarCaja();
     }
     return;
+    }
 }
 
 //Con la función limpiar caja se elimina automáticamente el número no acertado del usuario
